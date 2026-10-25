@@ -153,3 +153,9 @@ section.block + section.block { border-top: 1px solid var(--line); }
 @media print {
   .site-header, .site-footer, .next, .actions { display: none; }
 }
+
+/* What I did / what it taught me */
+.facts { margin: 0; max-width: var(--measure); }
+.facts dt { font-weight: 600; color: var(--spruce-deep); font-size: 1rem; margin-top: 1rem; }
+.facts dt:first-child { margin-top: 0; }
+.facts dd { margin: .15rem 0 0; }
