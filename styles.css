@@ -195,3 +195,40 @@ section.block + section.block { border-top: 1px solid var(--line); }
   .entry-when span::before { content: ", "; }
   .entry { padding: 2rem 0; }
 }
+
+/* ---- Visuals ---- */
+.gallery-block { margin-top: 1.5rem; }
+.gallery-title { font-family: var(--sans); font-size: .95rem; font-weight: 600; color: var(--spruce-deep); margin: 0 0 .6rem; }
+.gallery { display: grid; gap: 1rem; align-items: end; }
+.gallery.four { grid-template-columns: repeat(4, minmax(0, 1fr)); max-width: 44rem; }
+.gallery.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.gallery.two { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 40rem; align-items: start; }
+.gallery figure { margin: 0; }
+.gallery a { display: block; }
+.gallery img { width: 100%; border-radius: 4px; border: 1px solid var(--line); background: var(--mist); }
+.gallery.four img { height: 11rem; object-fit: contain; padding: .4rem; }
+.gallery.two img { aspect-ratio: 4 / 5; object-fit: cover; }
+.gallery figcaption { font-size: .9rem; color: var(--ink-soft); margin-top: .35rem; }
+.gallery a:hover img { border-color: var(--spruce); }
+
+.media { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 20rem); gap: 2rem; align-items: start; }
+.media-fig { margin: 0; }
+.media-fig img { border-radius: 6px; border: 1px solid var(--line); }
+.media-fig figcaption { font-size: .9rem; color: var(--ink-soft); margin-top: .35rem; }
+
+.conclusion { display: grid; grid-template-columns: minmax(0, 22rem) minmax(0, 1fr); gap: 3rem; align-items: start; }
+.conclusion-photo { margin: 0; }
+.conclusion-photo img { border-radius: 6px; aspect-ratio: 4 / 3; object-fit: cover; }
+
+@media (max-width: 860px) {
+  .conclusion, .media { grid-template-columns: minmax(0, 1fr); gap: 1.25rem; }
+  .media-fig { max-width: 22rem; }
+}
+@media (max-width: 560px) {
+  .gallery.four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .gallery.three { grid-template-columns: minmax(0, 1fr); }
+  .gallery.four img { height: 9rem; }
+}
+
+.gallery-block + .facts { margin-top: 1.75rem; }
+.body > .gallery-block:first-child { margin-top: 0; }
