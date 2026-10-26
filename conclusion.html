@@ -52,5 +52,15 @@
     <p><a href="mailto:adam.nunvar@gmail.com">adam.nunvar@gmail.com</a> &nbsp; <a href="tel:+16473007127">647-300-7127</a> &nbsp; <a href="https://www.linkedin.com/in/adam-nunvar-423a0a282/">LinkedIn</a></p>
   </div>
 </footer>
+<script>
+(function () {
+  if (!("IntersectionObserver" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  document.documentElement.classList.add("js-reveal");
+  var io = new IntersectionObserver(function (items) {
+    items.forEach(function (it) { if (it.isIntersecting) { it.target.classList.add("in"); io.unobserve(it.target); } });
+  }, { rootMargin: "0px 0px -8% 0px" });
+  document.querySelectorAll(".reveal").forEach(function (el) { io.observe(el); });
+})();
+</script>
 </body>
 </html>
