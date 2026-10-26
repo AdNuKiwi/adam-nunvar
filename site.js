@@ -4,6 +4,8 @@
   function build() {
     box = document.createElement("div");
     box.className = "lightbox";
+    box.hidden = true;
+    box.style.display = "none";
     box.setAttribute("role", "dialog");
     box.setAttribute("aria-modal", "true");
     box.setAttribute("aria-label", "Expanded image");
@@ -26,12 +28,17 @@
     cap.textContent = fc ? fc.textContent : "";
     cap.hidden = !cap.textContent;
     lastFocus = document.activeElement;
+    box.hidden = false;
+    box.style.display = "flex";
     box.classList.add("open");
     document.documentElement.classList.add("lightbox-on");
     box.querySelector(".lightbox-close").focus();
   }
   function close() {
     box.classList.remove("open");
+    box.hidden = true;
+    box.style.display = "none";
+    img.removeAttribute("src");
     document.documentElement.classList.remove("lightbox-on");
     if (lastFocus) lastFocus.focus();
   }
