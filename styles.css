@@ -232,3 +232,6 @@ section.block + section.block { border-top: 1px solid var(--line); }
 
 .gallery-block + .facts { margin-top: 1.75rem; }
 .body > .gallery-block:first-child { margin-top: 0; }
+
+.media-small { grid-template-columns: minmax(0, 1fr) minmax(0, 14rem); }
+@media (max-width: 860px) { .media-small .media-fig { max-width: 14rem; } }
