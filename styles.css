@@ -255,3 +255,6 @@ a.zoom:hover img { opacity: .92; }
 .gallery.certs img { height: 13rem; }
 #certificates + .gallery-block { margin-top: 1rem; }
 @media (max-width: 640px) { .gallery.certs img { height: 10rem; } }
+
+.lightbox figcaption strong { display: block; font-weight: 600; }
+.lightbox-note { display: block; margin-top: .25rem; color: #c5d3cb; max-width: 40rem; }

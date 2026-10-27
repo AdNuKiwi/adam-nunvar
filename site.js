@@ -25,8 +25,12 @@
     var fc = fig ? fig.querySelector("figcaption") : null;
     img.src = a.getAttribute("href");
     img.alt = thumb ? thumb.alt : "";
-    cap.textContent = fc ? fc.textContent : "";
-    cap.hidden = !cap.textContent;
+    var label = fc ? fc.textContent : "";
+    var note = a.getAttribute("data-note") || "";
+    cap.textContent = "";
+    if (label) { var l = document.createElement("strong"); l.textContent = label; cap.appendChild(l); }
+    if (note) { var n = document.createElement("span"); n.className = "lightbox-note"; n.textContent = note; cap.appendChild(n); }
+    cap.hidden = !label && !note;
     lastFocus = document.activeElement;
     box.hidden = false;
     box.style.display = "flex";
