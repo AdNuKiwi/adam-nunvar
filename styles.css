@@ -260,3 +260,15 @@ a.zoom:hover img { opacity: .92; }
 .lightbox-note { display: block; margin-top: .25rem; color: #c5d3cb; max-width: 40rem; }
 
 .page-head p.head-actions { margin-top: 1.25rem; }
+
+/* conclusion journey strip */
+.journey-block { padding-top: 0; }
+.journey { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+.journey figure { margin: 0; }
+.journey img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 6px; border: 1px solid var(--line); }
+.journey figcaption { margin-top: .5rem; font-size: .95rem; color: var(--ink-soft); line-height: 1.35; }
+.journey figcaption strong { display: block; color: var(--spruce-deep); font-weight: 600; font-size: .85rem; letter-spacing: .02em; text-transform: uppercase; }
+.conclusion-text { max-width: var(--measure); }
+@media (max-width: 720px) { .journey { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.conclusion-text p { margin: 0 0 1.25rem; }
+.conclusion-text .lesson { margin: 1.5rem 0; }
